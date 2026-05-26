@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>SudokuBox — Paperwhite Sudoku</title>
+  <meta name="description" content="A minimalist black-and-white Sudoku site with 60 logged puzzles across easy, medium, and very hard." />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="app-shell">
+    <section class="hero">
+      <div>
+        <p class="eyebrow">SudokuBox</p>
+        <h1>Paperwhite Sudoku</h1>
+        <p class="tagline">Minimal black-and-white puzzles built to feel calm, sharp, and readable on any screen.</p>
+      </div>
+      <div class="stats-card" aria-live="polite">
+        <span id="difficultyLabel">Easy</span>
+        <strong id="puzzleCounter">Puzzle 1 / 20</strong>
+        <small id="progressLabel">0 solved locally</small>
+      </div>
+    </section>
+
+    <section class="controls" aria-label="Sudoku controls">
+      <label>
+        Difficulty
+        <select id="difficultySelect">
+          <option value="easy">Easy</option>
+          <option value="medium">Medium</option>
+          <option value="veryHard">Very Hard</option>
+        </select>
+      </label>
+
+      <label>
+        Puzzle set
+        <select id="puzzleSelect"></select>
+      </label>
+
+      <button id="checkBtn" type="button">Check</button>
+      <button id="hintBtn" type="button">Hint</button>
+      <button id="resetBtn" type="button">Reset</button>
+    </section>
+
+    <section class="game-layout">
+      <div class="board-wrap">
+        <div id="sudokuBoard" class="sudoku-board" role="grid" aria-label="Sudoku puzzle"></div>
+      </div>
+
+      <aside class="panel">
+        <h2>How it works</h2>
+        <p>Pick one of 20 logged puzzle sets in each difficulty. Your board saves in this browser.</p>
+        <div class="mini-grid">
+          <span>Easy</span><strong>20</strong>
+          <span>Medium</span><strong>20</strong>
+          <span>Very Hard</span><strong>20</strong>
+          <span>Total</span><strong>60</strong>
+        </div>
+        <p id="message" class="message">Choose a cell and type 1–9. Use Backspace or 0 to clear.</p>
+      </aside>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
